@@ -1,7 +1,6 @@
-Hide one inactive tab
-
-Hide all inactive tabs
-
-Show selected tab
-
-Alternate between tabs, selecting one tab
+Set up interact
+Using interact, add one object to canvas
+Add object to svg image
+Add multiple objects to image
+Restrict objects to only image boundaries
+Restrict objects to only whitespace

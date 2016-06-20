@@ -5,8 +5,6 @@
 
     desc('A basic test for the node server');
     task('test', ['lint'], function () {
-        // Changed this after adding a script entry to package.json
-        // jake.exec("node node_modules/mocha/bin/mocha src/javascript/_server_test.js", { interactive: true}, complete );
         jake.exec("npm test src/javascript/_server_test.js", { interactive: true}, complete );
     }, { async: true });
 
