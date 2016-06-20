@@ -1,0 +1,13 @@
+# MAC OS
+.DS_Store
+
+# bin
+node_modules/.bin/jake
+node_modules/.bin/strip-ansi
+
+# generated directory
+generated/
+
+# sublime
+draggingOnSvg.sublime-project
+draggingOnSvg.sublime-workspace

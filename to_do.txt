@@ -1,0 +1,7 @@
+Hide one inactive tab
+
+Hide all inactive tabs
+
+Show selected tab
+
+Alternate between tabs, selecting one tab
