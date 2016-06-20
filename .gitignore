@@ -11,3 +11,6 @@ generated/
 # sublime
 draggingOnSvg.sublime-project
 draggingOnSvg.sublime-workspace
+
+# spikes
+spikes/
