@@ -1,7 +1,7 @@
 (function () {
 	"use strict";
 
-	var interact = require("interactjs");
+	var interact = require("interact");
 
 	exports.initialize = function initialize(options) {
 		
