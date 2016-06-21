@@ -1,31 +1,51 @@
 (function () {
     "use strict";
 
-    var server = require("./server.js");
+    var main = require("./interactjs.js");
+    var assert = require("./assert.js");
 
-/*    var server = require("./server.js");
-    var http = require("http");
+    describe("Setting up canvas with one box", function () {
 
-    describe("HttpServer", function() {
+        var container;
 
-        before( function () {
-            server.start(8080, function () {
-                console.log("server started");
-            });
-            console.log("server starting");
+        beforeEach( function () {
+            container = document.createElement("div");
+            document.body.appendChild(container);
         });
 
-        after( function () {
-            server.stop();
-            console.log("Server stopped");
+        afterEach ( function () {
+            removeElement(container);
         });
-        */
-    var assert = require('chai').assert;
 
-    describe('Server testing ', function () {
-        it('Should return a value from an exported function', function () {
-          assert.equal(server.three(), 3);
+        it('Checks to see whether canvas and box were created or not', function () {
+            var canvas = null;
+            var box = null;
+
+            box = addElement("div");
+            canvas = addElement("div");
+
+            var options = {
+                box: box,
+                canvas: canvas
+            };
+
+            main.initialize(options);
+
+
+            assert.isNotNull(canvas, 'canvas has not been defined!');
+            assert.isNotNull(box, 'box has not been defined!');
         });
+
+        function addElement(tagName) {
+            var element = document.createElement(tagName);
+            container.appendChild(element);
+            return element;
+        }
+
+        function removeElement(element) {
+            element.parentNode.removeChild(element);
+        }
+
     });
 
 }());

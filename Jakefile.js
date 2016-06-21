@@ -3,9 +3,23 @@
 (function () {
     "use strict";
 
+    var karma = require("simplebuild-karma");
+
+    var DIST_DIR = 'generated/dist';
+    var KARMA_CONFIG = "karma.conf.js";
+
+    desc('This starts the Karma server');
+    task('karma', function () {
+        console.log("Starting karma server") ;
+        karma.start({
+            configFile: KARMA_CONFIG
+        }, complete, fail);
+    }, { async: true});
+
     desc('A basic test for the node server');
-    task('test', ['lint'], function () {
-        jake.exec("npm test src/javascript/_server_test.js", { interactive: true}, complete );
+    task('default', ['lint', 'test'], function () {
+        // jake.exec("npm test src/javascript/_interactjs_test.js", { interactive: true}, complete );
+        console.log("\n\n TEST OK");
     }, { async: true });
 
     desc('Linting code');
@@ -13,6 +27,43 @@
         console.log(" Linting: . ");
         jake.exec("node node_modules/jshint/bin/jshint Jakefile.js src/javascript", { interactive: true}, complete);
     }, { async: true});
+
+    // desc('Build distribution directory');
+    // task('build', [DIST_DIR], function () {
+    //     console.log("Building distribution directory: .");
+        
+    //     shell.rm("-rf", DIST_DIR + "/*");
+    //     shell.cp("src/content/*", DIST_DIR);
+        
+    //     jake.exec("node node_modules/browserify/bin/cmd.js src/javascript/app.js -o " + DIST_DIR + "/bundle.js", { interactive: true}, complete);
+        
+    // }, { async: true});
+    
+    // directory(DIST_DIR);
+
+
+
+    desc('Build spikes');
+    task('buildSpikes', function () {
+        console.log("Building distribution directory: .");
+
+        var firstExDir = "spikes/interactFirstEx";
+        
+        jake.exec("node node_modules/browserify/bin/cmd.js " + firstExDir + "/javascript.js -o ./" + firstExDir + "/bundle.js", { interactive: true}, complete);
+        
+    }, { async: true});
+
+    desc('Run tests');
+    task('test', function () {
+        karma.run({
+            configFile: KARMA_CONFIG,
+            expectedBrowsers: [
+                "Chrome 51.0.2704 (Windows 8.1 0.0.0)"
+            ],
+            strict : !process.env.loose
+        }, complete, fail);
+    }, { async: true});
+
 
 }());
 
@@ -66,13 +117,7 @@
           fail("Incorrect node version; expected " + expectedVersion + ", but was " + actualVersion);  
         }
     });
-    
-    desc('Linting code');
-    task('lint', function () {
-        console.log(" Linting: . ");
-        jake.exec("node node_modules/jshint/bin/jshint Jakefile.js src/javascript", { interactive: true}, complete);
-    }, { async: true});
-    
+
     desc('Run tests');
     task('test', function () {
         karma.run({
@@ -83,17 +128,5 @@
             strict : !process.env.loose
         }, complete, fail);
     }, { async: true});
-    
-    desc('Build distribution directory');
-    task('build', [DIST_DIR], function () {
-        console.log("Building distribution directory: .");
-        
-        shell.rm("-rf", DIST_DIR + "/*");
-        shell.cp("src/content/*", DIST_DIR);
-        
-        jake.exec("node node_modules/browserify/bin/cmd.js src/javascript/app.js -o " + DIST_DIR + "/bundle.js", { interactive: true}, complete);
-        
-    }, { async: true});
-    
-    directory(DIST_DIR);
+
 */

@@ -1,4 +1,3 @@
-Set up interact
 Using interact, add one object to canvas
 Add object to svg image
 Add multiple objects to image
