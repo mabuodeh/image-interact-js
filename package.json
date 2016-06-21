@@ -10,6 +10,7 @@
     "chai": "^3.5.0",
     "http": "0.0.0",
     "http-server": "^0.9.0",
+    "interact.js": "^1.2.6",
     "jake": "^8.0.12",
     "karma-commonjs": "^1.0.0",
     "karma-mocha": "^1.0.1",
