@@ -4,6 +4,7 @@
     "use strict";
 
     var karma = require("simplebuild-karma");
+    var shell = require("shelljs");
 
     var DIST_DIR = 'generated/dist';
     var KARMA_CONFIG = "karma.conf.js";
@@ -28,18 +29,18 @@
         jake.exec("node node_modules/jshint/bin/jshint Jakefile.js src/javascript", { interactive: true}, complete);
     }, { async: true});
 
-    // desc('Build distribution directory');
-    // task('build', [DIST_DIR], function () {
-    //     console.log("Building distribution directory: .");
+    desc('Build distribution directory');
+    task('build', [DIST_DIR], function () {
+        console.log("Building distribution directory: .");
         
-    //     shell.rm("-rf", DIST_DIR + "/*");
-    //     shell.cp("src/content/*", DIST_DIR);
+        shell.rm("-rf", DIST_DIR + "/*");
+        shell.cp("src/content/*", DIST_DIR);
         
-    //     jake.exec("node node_modules/browserify/bin/cmd.js src/javascript/app.js -o " + DIST_DIR + "/bundle.js", { interactive: true}, complete);
+        jake.exec("node node_modules/browserify/bin/cmd.js src/javascript/app.js -o " + DIST_DIR + "/bundle.js", { interactive: true}, complete);
         
-    // }, { async: true});
+    }, { async: true});
     
-    // directory(DIST_DIR);
+    directory(DIST_DIR);
 
 
 

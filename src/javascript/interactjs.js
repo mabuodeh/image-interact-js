@@ -1,19 +1,20 @@
 (function () {
 	"use strict";
 
-	var interact = require("interact");
-
 	exports.initialize = function initialize(options) {
 		
 		// var canvas = document.getElementById('canvas');
 		// var box = document.getElementById('box');
 
-		var canvas = options.canvas;
-		var box = options.box;
+		// var canvas = options.canvas;
+		// var box = options.box;
 
 
-		if(canvas === undefined) { throw new Error("Expected options.canvas"); }
-		if(box === undefined) { throw new Error("Expected options.box"); }
+		// if(canvas === undefined) { throw new Error("Expected options.canvas"); }
+		// if(box === undefined) { throw new Error("Expected options.box"); }
+
+		
+	var interact = require("../vendor/interact-1.2.6.js");
 
 		var pixelSize = 16;
 

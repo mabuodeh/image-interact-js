@@ -17,7 +17,7 @@ module.exports = function(config) {
     files: [
         'src/javascript/**/*.js',
         'src/vendor/chai-3.5.0.js',
-        'src/vendor/classList.js'
+        'src/vendor/interact-1.2.6.js'
     ],
 
 
@@ -31,7 +31,7 @@ module.exports = function(config) {
     preprocessors: {
         'src/javascript/**/*.js': ['commonjs'],
         'src/vendor/chai-3.5.0.js': ['commonjs'],
-        'src/vendor/classList.js': ['commonjs']
+        'src/vendor/interact-1.2.6.js': ['commonjs']
     },
 
 
