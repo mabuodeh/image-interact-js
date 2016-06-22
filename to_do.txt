@@ -1,5 +1,2 @@
-Using interact, add one object to canvas
-Add object to svg image
-Add multiple objects to image
 Restrict objects to only image boundaries
 Restrict objects to only whitespace
