@@ -3,4 +3,7 @@
   
   -ms-touch-action: none;
       touch-action: none;
+
+  background: url(1.gif);
+  background-repeat: no-repeat;
 }
