@@ -1,2 +1,6 @@
-Restrict objects to only image boundaries
-Restrict objects to only whitespace
+Add drop zone
+add multiple dropzones
+add rectangle
+add multiple rectangles
+view x,y,w,h for both
+rotate for both

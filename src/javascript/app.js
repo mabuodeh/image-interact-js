@@ -10,12 +10,6 @@
 
   var hardwareButton = document.getElementById("hardwareButton");
 
-  // function addElement(tagName) {
-  //     var element = document.createElement(tagName);
-  //     document.appendChild(element);
-  //     return element;
-  // }
-
   hardwareButton.addEventListener('click', function() {
     var rect = hardwareButton.getBoundingClientRect();
      new Rectangle(50, rect.bottom - 100, 40, 40, svgCanvas);
