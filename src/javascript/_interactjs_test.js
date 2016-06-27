@@ -1,10 +1,10 @@
 (function () {
     "use strict";
 
-    var main = require("./interactjs.js");
     var assert = require("./assert.js");
+    var main = require("./interactjs.js");
 
-    describe("Setting up canvas with one box", function () {
+    describe("Setting up canvas", function () {
 
         var container;
 
@@ -17,23 +17,25 @@
             removeElement(container);
         });
 
-        it('Checks to see whether canvas and box were created or not', function () {
-            var canvas = null;
-            var box = null;
+        it('Checks to see whether image exists in svg', function () {
 
-            box = addElement("div");
-            canvas = addElement("div");
+            var background = addElement("svg");
+            // background.setAttribute
 
-            var options = {
-                box: box,
-                canvas: canvas
-            };
+            main.initialize({
+                background: background
+            });
 
-            main.initialize(options);
+            assert.equal(background.style.background, 'url("background.gif")', "background url");
+        });
 
+        it('Creates a dropzone rectangle', function () {
+            var svgCanvas = addElement("div");
+            var rect = new Rectangle(50, 100, 10, 40, svgCanvas);
 
-            assert.isNotNull(canvas, 'canvas has not been defined!');
-            assert.isNotNull(box, 'box has not been defined!');
+            var dropzone = main.createDropzone(svgCanvas);
+
+            assert.equal(JSON.stringify(rect), JSON.stringify(dropzone), "dropzone not created");
         });
 
         function addElement(tagName) {
@@ -45,6 +47,34 @@
         function removeElement(element) {
             element.parentNode.removeChild(element);
         }
+
+        function Rectangle (x, y, w, h, svgCanvas) {
+            this.x = x;
+            this.y = y;
+            this.w = w;
+            this.h = h;
+            this.stroke = 5;
+            this.el = document.createElement('rect');
+            
+            // this.el.setAttribute('data-index', rectangles.length);
+            this.el.setAttribute('id', 'inner-dropzone');
+            this.el.classList.add('draggable');
+            this.el.classList.add('dropzone');
+
+            this.draw();
+
+            // var div = document.createElement("div");
+            svgCanvas.appendChild(this.el);
+            // svgCanvas.appendChild(div);
+        }
+
+        Rectangle.prototype.draw = function () {
+            this.el.setAttribute('x', this.x + this.stroke / 2);
+            this.el.setAttribute('y', this.y + this.stroke / 2);
+            this.el.setAttribute('width' , this.w - this.stroke);
+            this.el.setAttribute('height', this.h - this.stroke);
+            //this.el.setAttribute('stroke-width', this.stroke);
+        };
 
     });
 

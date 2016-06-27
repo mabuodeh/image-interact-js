@@ -1,5 +1,3 @@
-Add image
-Add rectangle1
 Change rectangle1 into a dropzone
 Add rectangle2
 Make rectangle2 draggable
