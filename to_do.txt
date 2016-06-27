@@ -1,4 +1,3 @@
-Change rectangle1 into a dropzone
 Add rectangle2
 Make rectangle2 draggable
 Make rectangle1 draggable
