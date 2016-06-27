@@ -12,11 +12,11 @@
 	};
 
 	exports.createDropzone = function createDropzone(svgCanvas) {
-		var rect = new dropzoneRectangle(50, 100, 10, 40, svgCanvas);
+		var rect = new DropzoneRectangle(50, 100, 10, 40, svgCanvas);
 		return rect;
 	};
 
-	function dropzoneRectangle (x, y, w, h, svgCanvas) {
+	function DropzoneRectangle (x, y, w, h, svgCanvas) {
 		this.x = x;
 		this.y = y;
 		this.w = w;
@@ -36,7 +36,7 @@
 		// svgCanvas.appendChild(div);
 	}
 
-	Rectangle.prototype.draw = function () {
+	DropzoneRectangle.prototype.draw = function () {
 		this.el.setAttribute('x', this.x + this.stroke / 2);
 		this.el.setAttribute('y', this.y + this.stroke / 2);
 		this.el.setAttribute('width' , this.w - this.stroke);
