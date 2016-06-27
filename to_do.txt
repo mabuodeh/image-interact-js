@@ -1,6 +1,12 @@
-Add drop zone
-add multiple dropzones
-add rectangle
-add multiple rectangles
+Add image
+Add rectangle1
+Change rectangle1 into a dropzone
+Add rectangle2
+Make rectangle2 draggable
+Make rectangle1 draggable
+add dropzone button to add multiple dropzones
+add rectangle button to add multiple rectangles
+
 view x,y,w,h for both
 rotate for both
+
