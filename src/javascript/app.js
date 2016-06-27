@@ -2,7 +2,13 @@
   "use strict";
 
 
-//   var interact = require("../vendor/interact-1.2.6.js");
+  var interact = require("../vendor/interact-1.2.6.js");
+  var myInteract = require("./interactjs.js");
+
+  var svgCanvas = document.querySelector('svg');
+
+  // myInteract.initialize({background: svgCanvas});
+  myInteract.createDropzone(svgCanvas);
 
 //   var svgCanvas = document.querySelector('svg'),
 //       svgNS = 'http://www.w3.org/2000/svg',

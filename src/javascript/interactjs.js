@@ -3,13 +3,13 @@
 
 	var interact = require("../vendor/interact-1.2.6.js");
 
-	exports.initialize = function initialize(options) {
-		// options contains:
-		// background element
+	// exports.initialize = function initialize(options) {
+	// 	// options contains:
+	// 	// background element
 
-        var background = options.background;
-        background.style.background = "url(background.gif)";
-	};
+ //        var background = options.background;
+ //        background.style.background = "url(background.gif)";
+	// };
 
 	exports.createDropzone = function createDropzone(svgCanvas) {
 		var rect = new DropzoneRectangle(50, 100, 10, 40, svgCanvas);
