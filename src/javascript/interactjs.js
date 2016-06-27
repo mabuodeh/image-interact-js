@@ -12,11 +12,11 @@
 	};
 
 	exports.createDropzone = function createDropzone(svgCanvas) {
-		var rect = new Rectangle(50, 100, 10, 40, svgCanvas);
+		var rect = new dropzoneRectangle(50, 100, 10, 40, svgCanvas);
 		return rect;
 	};
 
-	function Rectangle (x, y, w, h, svgCanvas) {
+	function dropzoneRectangle (x, y, w, h, svgCanvas) {
 		this.x = x;
 		this.y = y;
 		this.w = w;

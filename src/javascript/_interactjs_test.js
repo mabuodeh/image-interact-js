@@ -38,6 +38,16 @@
             assert.equal(JSON.stringify(rect), JSON.stringify(dropzone), "dropzone not created");
         });
 
+        it('Creates a droppable rectangle', function () {
+            var svgCanvas = addElement("div");
+            var rect = new Rectangle(50, 100, 10, 40, svgCanvas);
+
+            var dropzone = main.createDropzone(svgCanvas);
+
+            // assert.equal(JSON.stringify(rect), JSON.stringify(dropzone), "dropzone not created");
+
+        });
+
         function addElement(tagName) {
             var element = document.createElement(tagName);
             container.appendChild(element);
