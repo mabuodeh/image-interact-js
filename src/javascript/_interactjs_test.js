@@ -24,18 +24,22 @@
         // });
 
         it('Creates a dropzone rectangle', function () {
-            var svgCanvas = addElement("div");
-            var rect = new Rectangle(50, 100, 10, 40, svgCanvas);
+            var svgCanvas = addElement("canvas");
+            var ctx=svgCanvas.getContext("2d");
+            ctx.rect(20,20,150,100);
+            ctx.stroke();
 
             var dropzone = main.createDropzone(svgCanvas);
 
-            assert.equal(JSON.stringify(rect), JSON.stringify(dropzone), "dropzone not created");
+            assert.equal(JSON.stringify(ctx), JSON.stringify(dropzone), "dropzone not created");
         });
 
         it('Creates a droppable rectangle', function () {
-            var svgCanvas = addElement("div");
-            var rect = new Rectangle(50, 100, 10, 40, svgCanvas);
-
+            var svgCanvas = addElement("canvas");
+            var ctx=svgCanvas.getContext("2d");
+            ctx.rect(20,20,150,100);
+            ctx.stroke();
+            
             var dropzone = main.createDropzone(svgCanvas);
 
             // assert.equal(JSON.stringify(rect), JSON.stringify(dropzone), "dropzone not created");

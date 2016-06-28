@@ -5,10 +5,12 @@
   var interact = require("../vendor/interact-1.2.6.js");
   var myInteract = require("./interactjs.js");
 
-  var svgCanvas = document.querySelector('svg');
+  var svgCanvas = document.querySelector('canvas');
 
   // myInteract.initialize({background: svgCanvas});
-  myInteract.createDropzone(svgCanvas);
+  var rect = myInteract.createDropzone(svgCanvas);
+  console.log(rect);
+  rect.stroke();
 
 //   var svgCanvas = document.querySelector('svg'),
 //       svgNS = 'http://www.w3.org/2000/svg',
