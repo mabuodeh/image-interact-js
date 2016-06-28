@@ -15,7 +15,9 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        'src/javascript/**/*.js',
+        'src/javascript/_interactjs_test.js',
+        'src/javascript/interactjs.js',
+        'src/javascript/assert.js',
         'src/vendor/chai-3.5.0.js',
         'src/vendor/interact-1.2.6.js'
     ],

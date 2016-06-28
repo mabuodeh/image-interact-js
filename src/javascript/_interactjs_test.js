@@ -17,22 +17,17 @@
             removeElement(container);
         });
 
-        it('Checks to see whether image exists in svg', function () {
-
-            var background = addElement("svg");
-            // background.setAttribute
-
-            main.initialize({
-                background: background
-            });
-
-            assert.equal(background.style.background, 'url("background.gif")', "background url");
-        });
+        // it('Checks to see whether image exists in svg', function () {
+        //     var background = addElement("svg");
+        //     main.initialize({background: background});
+        //     assert.equal(background.style.background, 'url("background.gif")', "background url");
+        // });
 
         it('Creates a dropzone rectangle', function () {
             var svgCanvas = addElement("div");
             var rect = new Rectangle(50, 100, 10, 40, svgCanvas);
 
+            console.log(svgCanvas);
             var dropzone = main.createDropzone(svgCanvas);
 
             assert.equal(JSON.stringify(rect), JSON.stringify(dropzone), "dropzone not created");
