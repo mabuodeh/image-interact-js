@@ -41,7 +41,7 @@
 		this.el.setAttribute('y', this.y + this.stroke / 2);
 		this.el.setAttribute('width' , this.w - this.stroke);
 		this.el.setAttribute('height', this.h - this.stroke);
-		//this.el.setAttribute('stroke-width', this.stroke);
+		this.el.setAttribute('stroke-width', this.stroke);
 	};
 
 }());

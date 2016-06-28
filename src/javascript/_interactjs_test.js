@@ -27,7 +27,6 @@
             var svgCanvas = addElement("div");
             var rect = new Rectangle(50, 100, 10, 40, svgCanvas);
 
-            console.log(svgCanvas);
             var dropzone = main.createDropzone(svgCanvas);
 
             assert.equal(JSON.stringify(rect), JSON.stringify(dropzone), "dropzone not created");
